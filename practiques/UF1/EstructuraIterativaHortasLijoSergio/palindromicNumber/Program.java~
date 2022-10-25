@@ -1,0 +1,29 @@
+/*
+ * Program.java        15/11/21
+ *
+ * Determina si un número es palíndromo
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program { 
+    
+    /** 
+     * @n1 an int to be add
+     *  
+     */ 
+    public boolean isPalindromic(int n1) {
+        int temp = 0;
+        int x;
+        int y;
+        while (int i = 1; i <= n1 ; i++) {
+            if (n1 % i == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+

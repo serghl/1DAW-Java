@@ -1,0 +1,61 @@
+/*
+ * Program.java        20/10/21
+ *
+ * Calcula el punto medio de dos puntos a partir de sus coordenadas
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.util.Scanner;
+
+public class ProgramTUI {
+    /**
+     * 
+     * @param segIni an int number
+     * @return an int
+     */
+    public int s2h(int segIni) {
+        int hour;
+        hour = segIni / 3600;
+        return hour;
+    }
+    /**
+     * 
+     * @param segIni an int number
+     * @return an int
+     */
+    public int s2m(int segIni) {
+        int min;
+        min = (segIni % 3600) / 60;
+        return min;
+    }
+    /**
+     * 
+     * @param segIni an int number
+     * @return an int
+     */
+    public int s2s(int segIni) {
+        int seg;
+        seg = (segIni % 3600) % 60;
+        return seg;
+    }
+    public static void main(String[] args) {
+        int segIni;
+        int hour;
+        int min;
+        int seg;
+        ProgramTUI p = new ProgramTUI();
+        // Inicializamos el scanner
+        Scanner s = new Scanner(System.in);
+        // Introducimos los segundos
+        System.out.println("¿Cuántos segundos quieres traducir?");
+        segIni = s.nextInt();
+        // Procesamos con los métodos
+        hour = p.s2h(segIni);
+        min = p.s2m(segIni);
+        seg = p.s2s(segIni);
+        System.out.printf("El tiempo introducido es un total de %d:%d:%d",hour,min,seg);
+    }
+}

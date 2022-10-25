@@ -1,0 +1,28 @@
+/*
+ * Program.java        28/10/21
+ *
+ * Calcula el número máximo entre cuatro números reales
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    public double max4(double n1, double n2, double n3, double n4){
+        double max;
+        // Declaramos una variable a devolver y aquí hacemos la formula
+        if (n1 >= n2 && n1 >= n3 && n2 >= n4) {
+            max = n1;
+        } else if (n2 >= n1 && n2 >= n3 && n2 >= n4){
+            max = n2;
+        } else  if (n3 >= n1 && n3 >= n2 && n3 >= n4){
+            max = n3;
+        }else{
+            max = n4;
+        }
+        return max;
+    }
+}

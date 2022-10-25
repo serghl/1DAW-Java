@@ -1,0 +1,28 @@
+/*
+ * Program.java        7/11/21
+ *
+ *  Escribe una secuencia ascendente
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program { 
+ 
+    /** 
+     * Escribe una secuencia entre n1 y n2
+     *  
+     * @param n1 an int 
+     * @param n2 an int 
+     */ 
+    public void writeAscNumbers(int n1, int n2) { 
+        int i; 
+        i = n1; 
+        while (i <= n2) { 
+            System.out.println(i); 
+            i++; 
+        }
+    } 
+}

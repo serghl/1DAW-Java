@@ -1,0 +1,178 @@
+/*
+ * Program.java        19/12/21
+ *
+ * Crea la clase Person
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.util.HashSet;
+import java.time.Period;
+
+public class Person {
+    
+    /** The person's dni */
+    private int dni;
+    /** The person's name */
+    private String name;    
+    /** The person's height */
+    private HashSet<Contract> contracts;
+    
+    
+// CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     * 
+     * @param name the person's name
+     */
+    public Person() {
+        this.dni = 00000000;
+    }
+    
+    /*
+     * Constructor 
+     */
+    
+    public Person(int dni) {
+        this.dni = dni;
+        this.contracts = new HashSet<Contract>(); 
+    }
+    
+    /*
+     * Constructor 
+     */
+    public Person(int dni, String name) {
+        this.dni = dni;
+        this.name = name;
+        this.contracts = new HashSet<Contract>(); 
+    }
+    
+    /**
+     * Getters y setters
+     */
+    
+    /**
+     * Gets the personn name
+     * 
+     * @return the person name
+     */
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    /**
+     * Gets the personn dni
+     * 
+     * @return the person name
+     */
+    
+    public int getDni() {
+        return dni;
+    }
+    
+    public void setDni(int dni) {        
+        this.dni = dni;
+    }        
+    
+    // --------  MORE METHODS -----------
+    
+    /*
+     * 
+     * Total of hours worked
+     * 
+     */
+    public int workedTime() {
+        int totalHours = 0;
+        for (Contract c : this.contracts) {
+            totalHours += c.duration();
+        }
+        return totalHours;
+    }
+    
+    /*
+     * 
+     * SignContract (add a contract)
+     * (Check first if not overlaped dates in same company)
+     * 
+     */
+    
+    public boolean signContract(Contract contract) {        
+        // Recorremos los contratos buscando similitudes de empresa 
+        for (Contract c : this.contracts) {
+            if (c.getCompany().equals(contract.getCompany())) {
+                // Buscamos la fechas superpuestas
+                if (JodaDT.isInInterval((JodaDT.parseDDMMYYYY(c.getInitialDate())),
+                                        (JodaDT.parseDDMMYYYY(c.getEndDate())),
+                                        (JodaDT.parseDDMMYYYY(contract.getInitialDate())),
+                                        (JodaDT.parseDDMMYYYY(contract.getEndDate())))) {
+                    System.out.print("Los contratos se solapan");
+                    return false;
+                }
+            }
+        }
+        return this.contracts.add(contract);
+    }
+    
+    /*
+     * 
+     * Number of companies
+     * 
+     */
+    
+    public int nCompanies() {                       
+        // Creamos un nuevo hashset de compañias diferentes
+        HashSet difCompanies = new HashSet<Company>(); 
+        // Y una variable como referencia
+        Company comparable = null;
+        for (Contract c : this.contracts) {
+           // Ahora comparamos en un forEach y cada una diferente la metemos en este hashSet
+            if (!c.getCompany().equals(comparable)) {
+                  difCompanies.add(c.getCompany());
+                  // Asignamos la compañia actual del forEach a la variable, para un nuevo recorrido
+                  comparable = c.getCompany();
+            }
+        }
+        // Retornamos el tamaño del hashSet compañías diferentes
+        return difCompanies.size();
+    }
+    
+    // Equals & hashCode
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((dni == 0) ? 0 : dni % 5);
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Person other = (Person) obj;
+        if (dni == 0) {
+            if (other.dni != 0)
+                return false;
+        } else if (dni != other.dni)
+            return false;
+        return true;
+    }
+    
+    public String toString() {
+        return "dni : " + this.dni + "\nname : " +this.name;
+    }
+}
+

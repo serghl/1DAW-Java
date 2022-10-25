@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64" version="1.8.0_292">
+<bootpath>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/amd64/default/jclSC180/vm.jar"/>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/se-service.jar"/>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/rt.jar"/>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/resources.jar"/>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/jsse.jar"/>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/charsets.jar"/>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/jce.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/usr/lib/jvm/adoptopenjdk-8-openj9-amd64/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

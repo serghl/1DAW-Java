@@ -1,0 +1,34 @@
+/*
+ * Program.java        18/1/22
+ *
+ * Traza una matriz
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+
+
+public class Program {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    public void trace (int[][]a) {
+        
+        System.out.print("\n\n TRACE \n\n");        
+        // Primero hacemos un recorrido anidado de la matriz
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                // Aqui printamos con la condicion de que coincidan en la misma posicion (para la diagonal)
+                if (i == j) {
+                    System.out.printf("%d",a[i][j]);
+                }
+            }
+        }        
+    }
+}

@@ -1,0 +1,108 @@
+/* 
+ * Program.java        15/3/22 
+ * 
+ * Surgery
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com> 
+ * 
+ * This is free software, licensed under the GNU General Public License v3. 
+ * See http://www.gnu.org/licenses/gpl.html for more information. 
+ */
+package surgery;
+
+/**
+ * Modelizes a book.
+ */
+public class Visit {
+
+    /** Date and hour of the visit */
+    private String visitDateTime;
+    /** Name of the patient */
+    private String patientName;
+    
+    /**
+     * Constructor.
+     * 
+     * @param code the book copy's code
+     */
+    public Visit(String visitDateTime, String patientName) {
+        this.code = code;
+    }
+
+    /**
+     * Constructor with all fields.
+     * 
+     * @param code the book copy identifier code
+     * @param isbn the book's ISBN
+     * @param title the book's title
+     * @param writer the book's writer
+     */
+    public Visit(String visitDateTime, String patientName) {
+        this.visitDateTime = visitDateTime;
+        this.patientName = patientName;
+        
+    }
+    
+    // Geetters and setters
+    
+    public String getVisitDateTime() {
+        return this.radius;
+    }
+    
+    public void setVisitDateTime(String visitDateTime) {
+        this.visitDateTime = JodaDT.parseDDMMYYYYhhmm(visitDateTime);
+    }
+
+    // Equals & hashCode
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((code == null) ? 0 : code.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Book other = (Book) obj;
+        if (code == null) {
+            if (other.code != null)
+                return false;
+        } else if (!code.equals(other.code))
+            return false;
+        return true;
+    }
+
+    // Getters & Setters
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getWriter() {
+        return this.writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
+
+    public String getIsbn() {
+        return this.isbn;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+}

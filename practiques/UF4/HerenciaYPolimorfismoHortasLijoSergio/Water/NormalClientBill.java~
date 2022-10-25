@@ -1,0 +1,81 @@
+/*
+ * Program.java        12/4/22
+ *
+ * Crea la clase Normal Client Bill
+ * 
+ * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+
+public class NormalClientBill extends Bill {
+    
+    /** Atributes */
+    
+    
+    
+    // CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     *      
+     */
+    
+    public NormalClientBill(double consumption, double cleaningUp, double sewerage) {
+        super(consumption, cleaningUp, sewerage);
+    }
+    
+    /*
+     * 
+     * OTHER METHODS
+     * 
+     */
+
+    // Get the cleaning up amount 
+    
+    @Override
+    public abstract double cleaningUpAmount() {
+        return 0;
+    }  
+    
+     // Get the sewerage amount 
+    
+    @Override
+    public abstract double sewerageAmount() {
+        return 0;
+    }  
+   
+    
+    // Equals & hashCode    
+    /*
+     @Override
+     public int hashCode() {
+     final int prime = 31;
+     int result = 1;
+     result = prime * result + ((code == null) ? 0 : code.hashCode());
+     return result;
+     }
+     
+     @Override
+     public boolean equals(Object obj) {
+     if (this == obj)
+     return true;
+     if (obj == null)
+     return false;
+     if (getClass() != obj.getClass())
+     return false;
+     Area other = (Area) obj;
+     if (code == null) {
+     if (other.code != null)
+     return false;
+     } else if (code != other.code)
+     return false;
+     return true;
+     }
+     
+     */
+    
+}
+

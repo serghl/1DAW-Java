@@ -1,0 +1,100 @@
+/*
+ * Program.java        22/2/22
+ *
+ * Crea la clase circle
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+
+public class Counter1 {
+    
+    /** The number */
+    private int digit;
+    
+    
+// CONSTRUCTORS
+    
+    
+    /*
+     * Constructor by default.
+     */
+    public Counter1() {
+        this.digit = 0;
+    }
+    
+    /**
+     * 
+     * Constructor
+     * 
+     * @param perimeter, the perimeter
+     * 
+     */
+    
+    public Counter1(int digit) {
+        this.digit = digit;        
+    }
+    
+    
+    /**
+     * Getters y setters
+     */
+    
+    /**
+     * Gets the perimeter
+     * 
+     * @return the perimeter
+     */
+    
+    public int digit() {
+        return this.digit;
+    }
+    
+    /**
+     * Set the first side
+     * 
+     * @return the first side
+     */
+    
+    public int digit(int digit) {
+        this.digit = digit;
+    }
+    
+ 
+    
+    // --------  MORE METHODS -----------
+    
+    /*
+     * Suma de uno en uno
+     * 
+     */
+    public int raise(int digit) {
+        int total;
+        if (digit >= 0 && digit <=8) {
+            total++;
+        } else if (digit = 9) {
+            total = 0;
+        }
+        return total;
+    }
+    
+    // Calcula el area con la formula de hero
+    
+    ;
+    }
+    
+    /*
+     * 
+     * Textual representation of the object
+     * 
+     */
+    
+    public String toString() {
+        String s = "La longitud de los lados del triangulo son " +this.side1 + " ," +this.side2 + " y " + this.side3 ;
+        return s;
+    }
+}
+

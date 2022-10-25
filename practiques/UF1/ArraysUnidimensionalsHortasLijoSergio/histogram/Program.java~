@@ -1,0 +1,32 @@
+/*
+ * Program.java        21/1/22
+ *
+ *  Devuelve los valores pares, mayores a 50
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    public void histogram (int[]a) {
+        // Creamos un array donde almacenar los pesos
+        int[]pesos = new int[100]
+            // Ahora recorremos el array clasificando los pesos encontrados
+            for (int i = 0; i < a.length; i++) {
+            if (a[i] > 0 && a[i] < 100) {
+                pesos[i]++;
+            }
+            System.out.println("PES    | NUMERO DE PERSONAS");
+            System.out.println("----------------------------");
+            // Luego retornamos el array       
+            return greater;
+    }
+}

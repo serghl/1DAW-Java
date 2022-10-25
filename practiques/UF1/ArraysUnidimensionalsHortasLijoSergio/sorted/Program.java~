@@ -1,0 +1,41 @@
+/*
+ * Program.java        19/12/21
+ *
+ * Realiza la contraccion de dos arrays
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * 
+     * @param int[]a an array of int
+     * @param int[]b an array of int
+     * 
+     * @return the join of both arrays
+     */
+    public boolean areSorte(int[] a) {
+        boolean areSorted = true;
+        boolean found = false;        
+        int i = 0;
+        System.out.print("\n\n Are Sorted \n\n");                
+        // Primero comparamos que los dos arrays sean iguales
+        while (int x : a && !found) {
+            if (a[i] >= a[i+1]) {
+                found = false;
+                areSorted = false;
+            } else {
+                i++;
+            }
+        }        
+        return areSorted;
+    }
+}
+
+

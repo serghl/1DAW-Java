@@ -1,0 +1,96 @@
+/*
+ * Program.java        24/2/22
+ *
+ * Clase Ring
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.time.LocalDateTime;
+
+public class Chronometer {
+    
+   /** */
+    private int seconds;
+    private int minutes;
+    private int hours;
+    private String chrono;
+    
+    // CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     *      
+     */
+    public Chronometer() {
+        this.chrono = "00:00:00";        
+    }
+    
+    /**
+     * 
+     * Constructor
+     * 
+     * @param positionX the x position
+     * @param positionY the y position
+     * 
+     */
+    
+    public Chronometer() {
+        this.chrono = "00:00:00";        
+    }
+    
+    /**
+     * Getters y setters
+     */
+    
+    /**
+     * Set and Get the model
+     * 
+     * @return the x position
+     */
+    
+    public String getModel() {
+        return this.model;
+    }
+    
+    public void setModel(String model) {
+        this.model = model;
+    }
+    
+    /*
+     * Set and get the pass of finger
+     * 
+     */
+    
+ 
+    
+    /*
+     * Set and get the ring diameter
+     * 
+     */
+    
+    
+    
+    // --------  MORE METHODS -----------
+    
+    
+    // Method to determinate the cost
+    
+    public String start () {
+        
+    
+    /*
+     * 
+     * Textual representation of the object
+     * 
+     */
+    
+    public String toString() {
+        String s;
+        s = "El anillo : "+ model +  ", tendrá un coste de : "+ cost();      
+        return s;
+    }
+}
+

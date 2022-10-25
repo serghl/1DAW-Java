@@ -1,0 +1,41 @@
+/*
+ * Program.java        20/10/21
+ *
+ * Calcula el tiempo de vuelo de un avión a partir de la distancia y la velocidad
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.util.Scanner;
+
+public class ProgramTUI {
+    
+    public String flighTime(int dist, int speed) {
+        int hour;
+        int min;
+        int min2;
+        min2 = dist  / speed * 60;
+        hour = min2 / 60;
+        min = min2 % 60;
+        return  hour +" : " + min;
+    }
+    public static void main(String[] args) {
+        int dist;
+        int speed;
+        String flighTime;
+        ProgramTUI p = new ProgramTUI();
+        // Inicializamos el scanner
+        Scanner s = new Scanner(System.in);
+        // Introducimos los kilometros
+        System.out.println("¿Cuántos kilómetros recorre el avión?");
+        dist = s.nextInt();
+        // Introducimos la velocidad
+        System.out.println("¿A qué velocidad va el avión (KMh) ?");
+        speed = s.nextInt();
+        // Procesamos con el método
+        flighTime = p.flighTime(dist,speed);
+        System.out.printf("El avión tardará %s en realizar el vuelo",flighTime);
+    }
+}

@@ -1,0 +1,40 @@
+/*
+ * Program.java        30/11/21
+ *
+ * Determina si un número es primo
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    
+    public boolean gcd (int num1, num2) {
+        // Declaramos variables
+        boolean found = false;
+        int maximocd = 0;
+        int max1;
+        int max2;
+        int i = 1;        
+        // Creamos el ciclo, parando cuando el resultado supere o iguale el valor introducido
+        while (!found) {
+        // Hacemos la busqueda hasta que el residuo sea 0   
+            max1 = num1 - 1;
+            if (num1 % max1 == 0) {
+                max1 = max1;
+                found = true;
+            } else {
+                divisor--;              
+            }            
+        }
+        return max1;
+    }
+}

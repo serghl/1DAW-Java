@@ -1,0 +1,55 @@
+/*
+ * Program.java        19/12/21
+ *
+ * Realiza la contraccion de dos arrays
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * 
+     * @param int[]a an array of int
+     * @param int[]b an array of int
+     * 
+     * @return the join of both arrays
+     */
+    public boolean areOrthogonal(int[] a, int[] b) {
+        boolean areOrtho = true;
+        boolean found = false;
+        int[] contraction;
+        contraction = new int[a.length];
+        int j = 0;
+        
+        System.out.print("\n\n ARE ORTHOGONAL \n\n");                
+        // Primero comparamos que los dos arrays sean iguales
+        if (a.length == b.length) {
+            // Luego sumamos los elementos del mismo index y los añadimos al nuevo
+            for (int i = 0; i < a.length; i++) {
+                contraction[i] = a[i] + b[i];               
+            } 
+        } else {
+            System.out.println("ERROR : Los arrays no tienen la misma longitud \n");
+        }
+        // Ahora revisamos si todos los valores son 0, con un metodo de cerca cortamos si encontramos algo
+        while (j < contraction.length && !found) {
+            if (contraction[j] == 0) {
+                found = false;
+                areOrtho = true;
+                j++;
+            } else {
+                areOrtho = false;
+                found = true;
+            }           
+        }
+        return areOrtho;
+    }
+}
+
+

@@ -1,0 +1,38 @@
+/*
+ * Program.java        22/11/21
+ *
+ * Averigua la cantidad de dígitos que tiene un número entero
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program { 
+    
+    /** 
+     * @n1 an int to be add
+     *  
+     */ 
+    public int numberOfDigits (int n1) {
+        int longitud = 0;
+        int i = 1;
+        // Creamos un ciclo while en el que comparar 
+        while ( longitud <= i && n1 / Math.pow(10,i-1) != 0)  {
+            // Dividiendo el numero entre 10 elevado a la potencia I?
+            //    if (n1 / Math.pow(10,i-1) != 0) {
+            
+            longitud = longitud + 1;
+            i++;
+                
+        }
+        
+    return longitud;    
+    }
+    
+}
+
+
+
+

@@ -1,0 +1,30 @@
+public class TriangleTUI {
+    
+    
+    
+    public static void main(String[] args) {
+        Triangle t1 = new Triangle(5,6,7);
+        Triangle t2 = new Triangle(1.32,2.55,4);
+        printPerson(p1);
+        printPerson(p2);
+        
+        t1.perimeter();
+        printTriangle(t1);
+        
+        t2.area();
+        printTriangle(t2);
+        
+       
+        // Aqui es lo mismo que abajo pero simplificado
+        System.out.print("-- AQUI --");
+        System.out.println(t2.toString());
+        System.out.println(t2);
+    }
+    
+    public static void printTriangle(Triangle t) {
+        System.out.println("Lado 1:     " + p.getSide1());
+        System.out.println("Lado 2:     " + p.getSide2());
+        System.out.println("Lado 3:     " + p.getSide3());
+        System.out.println();
+    }
+}

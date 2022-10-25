@@ -1,0 +1,29 @@
+/*
+ * Program.java        9/2/22
+ *
+ * Calcula la letra de un dni
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * @param str an int
+     * 
+     * @returns an String
+     */
+    public String dani2nif(String str) {                 
+        String nif = Integer.toString(str);
+        String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+        int residuo; = str % 23;
+        String letraActual = s.charAt(residuo);
+        nif += letraActual; 
+        
+    }
+}

@@ -1,0 +1,134 @@
+/*
+ * Program.java        24/2/22
+ *
+ * Clase Ring
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Ring {
+    
+    /** The ring model */
+    private String model;
+    /** The finger diameter */
+    private double passD;  
+    // The ring diameter
+    private double ringD;
+    
+    // CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     *      
+     */
+    public Ring() {
+        this.model = "Ring";
+        this.passD = 0 ;
+        this.ringD = 0;
+    }
+    
+    /**
+     * 
+     * Constructor
+     * 
+     * @param positionX the x position
+     * @param positionY the y position
+     * 
+     */
+    
+    public Ring(String model,double passD, double ringD) {
+        this.model = model;
+        this.passD = passD ;
+        this.ringD = ringD;
+    }
+    
+    /**
+     * Getters y setters
+     */
+    
+    /**
+     * Set and Get the model
+     * 
+     * @return the x position
+     */
+    
+    public String getModel() {
+        return this.model;
+    }
+    
+    public void setModel(String model) {
+        this.model = model;
+    }
+    
+    /*
+     * Set and get the pass of finger
+     * 
+     */
+    
+    public double getPassD() {
+        return this.passD;
+    }
+    
+    public void setPassD(double passD) {
+        this.passD = passD;
+    }
+    
+    /*
+     * Set and get the ring diameter
+     * 
+     */
+    
+    public double getRingD() {
+        return this.ringD;
+    }
+    
+    public void setRingD(double ringD) {
+        this.ringD = ringD;
+    }
+    
+    // --------  MORE METHODS -----------
+    
+    /*
+     * Fabrication costs :
+     * Fabrication cost without gold value = 40€
+     * Gold cost = 10€ / gram
+     * Benefit rate = 210%
+     * Gold weight = 19,3 gr/cm^3^
+     */
+    
+    // Method to determinate the cost
+    
+    public double cost () {
+        double goldWeight = 0;
+        double goldCost = 0;        
+        double finalCost = 0;
+        double volume = 0;
+        double passR = this.passD / 2;
+        double ringR = this.ringD / 2;
+        // Calculamos el volumen del anillo
+        volume = 2 * Math.pow(Math.PI,2) * passR * Math.pow(ringR,2);
+        // Ahora el peso del oro usado
+        goldWeight = volume * 10 * 19.3;
+        // Aqui el gasto en oro
+        goldCost = goldWeight * 10;
+        // Aquí el precio total
+        finalCost = (goldCost + 40) * 2.1;        
+        return finalCost;
+    }    
+    
+    /*
+     * 
+     * Textual representation of the object
+     * 
+     */
+    
+    public String toString() {
+        String s;
+        s = "El anillo : "+ model +  ", tendrá un coste de : "+ cost();      
+        return s;
+    }
+}
+

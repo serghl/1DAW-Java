@@ -1,0 +1,28 @@
+public class PersonTUI {
+    
+    
+    
+    public static void main(String[] args) {
+        Person p1 = new Person("Eli",27,1.60,'M',false);
+        Person p2 = new Person("Alex",20,1.74,'H',false);
+        printPerson(p1);
+        printPerson(p2);
+        
+        p1.birthday();
+        printPerson(p1);
+        
+        p2.birthday();
+        printPerson(p2);
+        
+        Person girl = p1;
+        Person boy = p2;
+        
+        girl.birthday() = p1;
+       printPerson(p1);
+        
+        boy.birthday = p2;
+        printPerson(p2);
+    }
+    
+    public static void printPerson(Person p) {
+        System.out.println("Nom:     " + p.getName());

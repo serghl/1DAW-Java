@@ -1,0 +1,193 @@
+/*
+ * Program.java        19/3/22
+ *
+ * Crea la clase Contact
+ *
+ * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.util.HashSet;
+
+public class Contact {
+    
+    /** The contact dni */
+    private int dni;
+    /** The contact name */
+    private String name; 
+    /** The contact phone number */
+    private String phone;
+    /** The person's height */
+    private HashSet<Contact> contacts;
+    
+    
+// CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     * 
+     * @param name the person's name
+     */
+    public Contact() {
+        this.dni = 00000000;
+        this.contacts = new HashSet<Contact>();
+    }
+    
+    /*
+     * Constructor 
+     */
+    
+    public Contact(int dni) {
+        this.dni = dni;
+        this.contacts = new HashSet<Contact>(); 
+    }
+    
+    /*
+     * Constructor 
+     */
+    public Contact(int dni, String name, String phone) {
+        this.dni = dni;
+        this.name = name;
+        this.phone = phone;
+        this.contacts = new HashSet<Contact>();
+    }
+    
+    /**
+     * Getters y setters
+     */
+    
+    /**
+     * Gets the personn name
+     * 
+     * @return the person name
+     */
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    /**
+     * Gets the personn dni
+     * 
+     * @return the person name
+     */
+    
+    public int getDni() {
+        return dni;
+    }
+    
+    public void setDni(int dni) {        
+        this.dni = dni;
+    }        
+    
+    /**
+     * Gets the person phone
+     * 
+     * @return the person phone
+     */
+    
+    public String getPhone() {
+        return phone;
+    }
+    
+    public void setPhone(String phone) {        
+        this.phone = phone;
+    }  
+    
+    // --------  MORE METHODS -----------
+    
+    /*
+     * 
+     * search for a Contact
+     * 
+     */
+    public Contact search(int dni) {
+        Contact contactSearched = null;
+        for (Contact c : this.contacts) {
+            if (c.getDni() == dni) {
+                contactSearched = c;
+            }
+        }
+        return contactSearched;
+    }
+    
+    /*
+     * 
+     * add a contact
+     * (A contact can not be a contact of itself)
+     * 
+     */
+    
+    public boolean addContact(Contact contact) {        
+                return this.contacts.add(contact);
+    }
+    
+    /*
+     * 
+     * Remove a contact
+     * 
+     */
+    
+    public boolean remove(Contact contact) {        
+        return this.contacts.remove(contact);
+    }
+    
+    /*
+     * 
+     * Remove all contacts
+     * 
+     */
+    
+    public void removeAll() {        
+        this.contacts.clear();
+    }
+    
+    /*
+     * 
+     * List all contacts
+     * 
+     */
+    
+    public void listContacts() {        
+        for (Contact c : this.contacts) {
+            System.out.println(c.toString());
+        }
+    }
+    
+    // Equals & hashCode
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((dni == 0) ? 0 : dni % 5);
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Contact other = (Contact) obj;
+        if (dni == 0) {
+            if (other.dni != 0)
+                return false;
+        } else if (dni != other.dni)
+            return false;
+        return true;
+    }
+    
+    public String toString() {
+        return "\ndni : " + this.dni + "\nname : " + this.name + "\nPhone : " + this.phone ;
+    }
+}
+

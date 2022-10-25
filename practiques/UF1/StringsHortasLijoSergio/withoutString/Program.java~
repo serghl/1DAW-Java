@@ -1,0 +1,31 @@
+/*
+ * Program.java        8/2/22
+ *
+ * Cuenta las ocurrencias de un string dentro de otro string
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * @param str an string
+     * @param sub an String
+     * 
+     * @returns an String
+     */
+    public void isSubString2(String str, String sub) {        
+        String stringCortado = "";
+        // longitud del subtring
+        int longitudSub = sub.length();
+        int posicion = str.indexOf(sub);
+        // En caso de encontrar el subString, lo recortamos
+        if (posicion != -1) {
+            stringCortado = (str.substring(posicion,posicion+longitudSub)) + (str.substring(posicion+longitudSub));
+        }
+        System.out.println(stringCortado);

@@ -1,0 +1,30 @@
+/*
+ * Program.java        12/12/21
+ *
+ *  Calcula si dos elementos tienen la misma longitud
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+
+public class Program {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    public boolean equalLength (double[]a, double[]b) {
+        boolean equal = false;
+            System.out.print("\n\n EQUAL LENGTH  \n\n");        
+        // Comparamos dos arrays
+        if (a.length == b.length) {     
+            equal = true;           
+        }   
+        return equal;
+    }
+}
+

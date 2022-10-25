@@ -1,0 +1,31 @@
+/*
+ * Program.java        8/10/21
+ *
+ * Calcula el porcentaje descontado en una compra a partir del precio inicial y del precio pagado (Sin IVA)
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    /**
+     * 
+     * @param precioInicial an int
+     * @param precioFinal an int
+     * @return the percentage 
+     */
+    public int discount (int precioInicial, int precioFinal) {
+        // Declaramos las variables
+        int descuento;
+        int porcentaje;
+        // Calculamos cuanto es el descuento
+        descuento = precioInicial - precioFinal;
+        // Ahora calculamos el porcentaje del descuento sobre el precio inicial
+        porcentaje = descuento * 100 / precioInicial;
+        
+        return porcentaje;
+    }
+}

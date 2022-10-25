@@ -1,0 +1,33 @@
+/*
+ * Program.java        15/12/21
+ *
+ * Retorna una tabla con los elementos que son multiplos del ultimo valor de un array 
+ * 
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    public void multipleLast(int[]a) {
+        // Primero definimos una variable con el valor del último item del array
+        int last = a[a.length - 1];
+        System.out.print("\n\n MULTIPLE LAST \n\n");        
+        // Iniciamos un recorrido del bucle
+        for (int i = 1; i < a.length; i++) {
+            // Printamos los elementos que son múltiplos de last
+            if (a[i] % last == 0) {
+                System.out.printf("%d es múltiplo de %d\n",a[i],last);
+            }          
+        }
+    }
+}
+

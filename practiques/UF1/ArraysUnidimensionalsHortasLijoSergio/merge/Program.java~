@@ -1,0 +1,41 @@
+/*
+ * Program.java        19/12/21
+ *
+ * Donados dos arrayy int ordenador, crea un tercero con la suma de ambos, tambien ordenado
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * 
+     * @param int[]a an array of int
+     * @param int[]b an array of int
+     * 
+     * @return the sum of both arrays
+     */
+    public int[] merge(int[] a, int[] b) {
+        System.out.print("\n\n MERGE \n\n");
+        int i1 = 0, i2 = 0, j = 0, k = 0;
+        // Creamos el array de retorno
+        int [] arrayFusion;
+        arrayFusion = [a.length + b.length];            
+        // Ahora medimos los elementos y los colocamos ordenadamente
+        while (i <= arrayFusion.length) {
+            if (a[i] <= b[i2]) {
+                arrayFusion[j] = a[i];
+                i++;
+            } else {
+                arrayFusion[j] = b[i2];
+                i2++;
+            } 
+            return sumaArrays;
+        }
+    }
+    
+    

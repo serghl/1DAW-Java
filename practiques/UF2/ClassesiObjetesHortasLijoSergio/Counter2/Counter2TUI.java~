@@ -1,0 +1,24 @@
+public class Counter2TUI {
+            
+    public static void main(String[] args) {
+        
+        Counter2 d1 = new Counter2(3,5);
+        Counter2 d2 = new Counter2(1,2);
+        Counter2 d3 = new Counter2(0,9);
+                
+        //digit1.reset();
+        //digit2.raise();
+        d2.increment();
+        d2.increment();
+      
+        d3.increment();
+        //digit3.raise();
+        
+        System.out.println("-- AQUI --");
+        System.out.println(d1.toString());
+        System.out.println(d2.toString());
+        System.out.println(d3.toString());
+        
+        
+    }
+}

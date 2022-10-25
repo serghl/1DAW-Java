@@ -1,0 +1,24 @@
+/*
+ * Program.java        27/10/21
+ *
+ * Calcula el numero mínimo entre dos números reales
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    public int min2(int n1, int n2){
+        int min;
+        // Declaramos una variable a devolver y aquí hacemos la formula
+        if (n1 < n2) {
+            min = n1;
+        } else {
+            min = n2;
+        }
+        return min;
+    }
+}

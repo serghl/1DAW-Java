@@ -1,0 +1,148 @@
+/*
+ * Program.java        19/12/21
+ *
+ * Crea la clase Person
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+
+public class Triangle {
+    
+    /** The first side of the Triangle */
+    private double side1;
+    /** The second side of the Triangle */
+    private double side2;
+    /** The third side of the Triangle */
+    private double side3;
+    
+// CONSTRUCTORS
+    
+    
+    /*
+     * Constructor by default.
+     */
+    public Triangle() {
+        this.side1 = 3;
+        this.side2 = 4;
+        this.side3 = 5;
+    }
+    
+    /**
+     * 
+     * Constructor
+     * 
+     * @param name the person's name
+     * @param age thye person's age
+     * @param height the person's height
+     * @param sex the person's sex
+     * @param married true if the person is married, false otherwise
+     * 
+     */
+    
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+    
+    
+    /**
+     * Getters y setters
+     */
+    
+    /**
+     * Gets the first side
+     * 
+     * @return the first side
+     */
+    
+    public double getSide1() {
+        return this.side1;
+    }
+    
+    /**
+     * Set the first side
+     * 
+     * @return the first side
+     */
+    
+    public void setSide1(double side1) {
+        this.side1 = side1;
+    }
+    
+    /**
+     * Gets the second side
+     * 
+     * @return the second side
+     */
+    
+    public double getSide2() {
+        return this.side2;
+    }
+    
+    /**
+     * Set the first side
+     * 
+     * @return the first side
+     */
+    
+    public void setSide2(double side2) {
+        this.side2 = side2;
+    }
+    /**
+     * Gets the third side
+     * 
+     * @return the third side
+     */
+    
+    public double getSide3() {
+        return this.side3;
+    }
+    
+    /**
+     * Set the third side
+     * 
+     * @return the third side
+     */
+    
+    public void setSide3(double side3) {
+        this.side3 = side3;
+    }
+    
+    // --------  MORE METHODS -----------
+    
+    /*
+     * Calcula el perimetro
+     * 
+     */
+    public double perimeter() {
+        double per;
+        per = this.side1 + this.side2 + this.side3;
+        return per;
+    }
+    
+    // Calcula el area con la formula de hero
+    
+    public double area() {
+        double mitadPerimetro, area; 
+        mitadPerimetro = this.perimeter()/2;
+        area = (Math.sqrt(mitadPerimetro*(mitadPerimetro-this.side1)*(mitadPerimetro-this.side2)*(mitadPerimetro-this.side1)));
+        return area;
+    }
+    
+    /*
+     * 
+     * Textual representation of the object
+     * 
+     */
+    
+    public String toString() {
+        String s = "La longitud de los lados del triangulo son " +this.side1 + " ," +this.side2 + " y " + this.side3 ;
+        return s;
+    }
+}
+

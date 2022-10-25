@@ -1,0 +1,89 @@
+/*
+ * Program.java        25/1/22
+ *
+ * Cambia las distancia entre dos ciudades
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * 
+     * @param ciudad an string
+     * @param ciudades an array of Strings
+     *
+     * @return the position of the string at the array, if found, -1 otherwise
+     */
+    
+    public int posicionCiudad(String[]ciudades,String ciudad) {        
+        int i = 0;
+        int posicion = -1;
+        boolean found = false;
+        while (i < ciudades.length && !found) {
+            /*
+             * --- IMPORTANTE --
+             *  .equals!!!
+             * 
+             */
+            if (ciudades[i].equals(ciudad)) {
+                found = true;                
+                posicion = i;
+            } else {
+                i++;
+            }            
+        }
+        return posicion;
+    }
+    
+    
+    /**
+     * 
+     * @param ciudadA an string
+     * @param ciudadB an string
+     *
+     * @return the distance between both citys
+     */
+    
+    public int distance(String ciudadA, String ciudadB) {
+        Program p = new Program();
+        // Definimos el string de ciudades y asignamos las posiciones en el array con el metodo anterior
+        String[]ciudades = {"Barcelona","Girona","Lleida","Tarragona","Zaragoza","Teruel"};
+        int posicionCiudadA = p.posicionCiudad(ciudades,ciudadA);
+        int posicionCiudadB = p.posicionCiudad(ciudades,ciudadB);
+        // Aqui definimos las distancias
+        int distancia;
+        int[][] distanciasEntreCiudades = {
+            {-1,100,156,98,296,409},
+            {100,-1,256,198,396,509},
+            {156,256,-1,91,140,319},
+            {98,98,198,91,-1,231,311},
+            {296,396,140,231,-1,981},
+            {409,509,319,311,181,-1}
+        };
+        System.out.print("\n\n --- DISTANCE --- \n\n");                
+        
+        /* 
+         * Se puede hacer de otra manera sin rellenar el array con las distancias inversas
+         * Y es con un if (si ciudad a > ciudad b) --> cambiamos los resultados i X j y viceversa;
+         *
+         * if (ciudad a > ciudad b) {
+         *    distancia = distanciasEntreCiudades[ciudadB][ciudadA];
+         * } else {
+         *    distancia = distanciasEntreCiudades[ciudadA][ciudadB];
+         * }
+         * return distancia;
+         */        
+        
+// Aqui asignamos a la variable distancia, las posiciones obtenidas
+        distancia = distanciasEntreCiudades[posicionCiudadA][posicionCiudadB];
+        return distancia;  
+    }
+}        
+
+

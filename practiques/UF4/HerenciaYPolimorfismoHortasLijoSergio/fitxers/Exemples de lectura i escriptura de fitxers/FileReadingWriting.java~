@@ -1,0 +1,50 @@
+/*
+ * FileReadingWriting.java   
+ *
+ * Copyright 2010-2012 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ *
+ */
+
+/**
+ * An example of reading and writing text files.
+ */
+public class FileReadingWriting {
+    public static void main(String[] args) {
+        // Create n object to read a text file
+        Reader fr = new Reader("sales.dat");
+        // Create an object to write to a text file
+        Writer fw = new Writer("salesTotals.dat");
+        // Read the first line (it's the header, don't do anything with it,
+        // dismiss it)
+        String lf = fr.readLine();
+        int tlorries = 0, tvans = 0, tcars = 0;
+        // Read a line
+        lf = fr.readLine();
+        // While there are lines left, sum lorries, vans and cars
+        while (lf != null) {
+            // Get each field of the line
+            String camps[] = lf.split("\\s+");
+            // The number of lorries
+            int camions = Integer.parseInt(camps[3]);
+            // The number of vans
+            int furgons = Integer.parseInt(camps[4]);
+            // The number of cars
+            int cotxes = Integer.parseInt(camps[5]);
+            tlorries += camions;
+            tvans += furgons;
+            tcars += cotxes;
+            // Read a line
+            lf = fr.readLine();
+        }
+        // Close the file reader
+        fr.close();
+        // Write the totals to the output file, separating each total with a
+        // tab
+        fw.print("Number of lorries=" + tlorries + "\t" + "Number of vans=" + tvans + "\t" + "Number of cars="+ tcars);
+        // Close the file writer
+        fw.close();
+    }
+
+}

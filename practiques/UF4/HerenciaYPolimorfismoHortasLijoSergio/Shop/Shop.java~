@@ -1,0 +1,87 @@
+/*
+ * Program.java        13/4/22
+ *
+ * Crea la clase Shop
+ * 
+ * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.util.ArrayList;
+import java.io.PrintWriter;
+import java.io.File;
+import java.util.Scanner;
+
+public class Shop {
+    
+    /** Atributes */   
+    private ArrayList<Product> stock;       
+    
+    // CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     *      
+     */
+    public Shop () {
+        this.stock = new ArrayList<Product>();
+    }
+    
+    /*
+     * OTHER METHOS
+     *      
+     */
+    
+    // ADD product
+    
+    public boolean add(Product p) {
+        return this.stock.add(p);
+    }
+    
+    // Remove Product
+    
+    public boolean remove(Product p) {
+        return this.stock.remove(p);
+    }
+    
+    // Stock Value
+    
+    public float stockValue() {
+        float total = 0;
+        for (Product p : this.stock) {
+            total += p.price();
+        }
+        return total;
+    }
+    
+    // Export stock
+    
+    public void listStock() {
+        PrintWriter report = new PrintWriter("Report.txt");
+        for (Product p : this.stock) {
+            report.println(p.toString());
+        }
+        report.close();
+    }
+   
+    // Print stock
+    
+    public void printStock() {
+        int pcCounter = 0;
+        int hdCounter = 0;
+        for (Product p : this.stock) {
+            System.out.println(p.toString());
+            if (p instanceof Cpu) {
+                pcCounter++;
+            } else {
+                hdCounter++;
+            }            
+        }
+        System.out.println("\nTotal de HardDisk : "+ hdCounter);
+        System.out.println("Total de Cpu : "+ pcCounter);
+        System.out.println("Valor total stock : "+ stockValue());
+    }
+    
+}
+

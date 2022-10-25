@@ -1,0 +1,230 @@
+/*
+ * Program.java        24/2/22
+ *
+ * Crea la clase bicycle
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Bicycle {
+    
+    /** The model of the bike*/
+    private String model;
+    /** The number of rear sprocket */
+    private int nRearSprocket;
+    /** The number of front sprocket*/
+    private int nFrontSprocket;
+    /** The current rear sprocket*/
+    private int rearSprocket;
+    /** The current front sprocket*/
+    private int frontSprocket;
+    /** The max Speed the model can achieve */
+    private int maxSpeed;
+    /** The current speed*/
+    private int speed;
+    
+    // CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     */
+    public Bicycle() {
+        this.model = "Bicycle"; 
+        this.nRearSprocket = 5;
+        this.nFrontSprocket = 2;
+        this.rearSprocket = 3;
+        this.frontSprocket = 1; 
+        this.maxSpeed = 80;
+        this.speed = 40;
+    }
+    
+    /**
+     * 
+     * Constructor
+     * 
+     * 
+     */
+    
+    public Bicycle(String model, int nRearSprocket, int nFrontSprocket,int rearSprocket, 
+                   int fronSprocket, int maxSpeed, int speed) {
+        this.model = model;
+        this.nRearSprocket = nRearSprocket;
+        this.nFrontSprocket = nFrontSprocket;
+        this.maxSpeed = maxSpeed;
+        this.rearSprocket = rearSprocket;
+        this.frontSprocket = frontSprocket;
+        this.speed = speed;
+    }
+    
+    /**
+     * -------- Getters y setters -------------
+     */
+    
+    /**
+     * Gets and set the speed
+     * 
+     * @return the speed
+     */
+    
+    public String getModel() {
+        return this.model;
+    }
+    
+    public void setModel (String model) {        
+        this.model = model;        
+    }
+    
+    /**
+     * Gets and set the number of rear sprockets
+     * 
+     * @return the rear sprocket
+     */
+    
+    public int getNrearSprocket() {
+        return this.nRearSprocket;
+    }    
+    
+    public void setNrearSprocket(int nRearSprocket) {
+        if (this.nRearSprocket < 3 || this.nRearSprocket > 7) {
+            throw new IllegalArgumentException("Rear sprockets has to be set between 3 and 7, inclusive");
+        } else {
+            this.nRearSprocket = nRearSprocket;
+        }
+    }
+    /**
+     * Gets and set the number of front sprockets
+     * 
+     * @return the front sprocket
+     */
+    
+    public int getNfrontSprocket() {
+        return this.nFrontSprocket;
+    }    
+    
+    public void setNfrontSprocket(int nFrontSprocket) {
+        if (this.nFrontSprocket < 1 || this.nFrontSprocket > 3) {
+            throw new IllegalArgumentException("Front sprockets has to be set between 1 and 3, inclusive");
+        } else {
+            this.nFrontSprocket = nFrontSprocket;
+        }
+    }
+    
+    /**
+     * Gets and set the CURRENT rear sprocket
+     * 
+     * @return the rear sprocket
+     */
+    
+    public int getRearSprocket() {
+        return this.rearSprocket;
+    }    
+    
+    public void setRearSprocket(int nRearSprocket) {
+        if (this.rearSprocket > this.nRearSprocket) {
+            throw new IllegalArgumentException("Current rear sprocket is not on the range of this bike");
+        } else {
+            this.rearSprocket = rearSprocket;
+        }
+    }
+    
+    /**
+     * Gets and set the CURRENT front sprocket
+     * 
+     * @return the rear sprocket
+     */
+    
+    public int getFrontSprocket() {
+        return this.frontSprocket;
+    }    
+    
+    public void setFrontSprocket(int frontSprocket) {
+        if (this.frontSprocket > this.nFrontSprocket) {
+            throw new IllegalArgumentException("Current front sprocket is not on the range of this bike");
+        } else {
+            this.frontSprocket = frontSprocket;
+        }
+    }
+    
+    /**
+     * Gets and set the maximun speed
+     * 
+     * @return the speed
+     */
+    
+    public int getMaxSpeed() {
+        return this.maxSpeed;
+    }
+    
+    public void setMaxSpeed (int maxSpeed) {
+        if (this.maxSpeed < 0 || this.maxSpeed > 120) {
+            throw new IllegalArgumentException("The max speed of a bicycle can be between 0 and 120");
+        }else {
+            this.maxSpeed = maxSpeed;
+        }
+    }
+    
+    /**
+     * Gets and set the current speed
+     * 
+     * @return the speed
+     */
+    
+    public int getSpeed() {
+        return this.speed;
+    }
+    
+    public void setSpeed (int speed) {
+        if (this.speed > this.maxSpeed) {
+            throw new IllegalArgumentException("This bicycle can't be that fast");
+        }else {
+            this.speed = speed;
+        }
+    }
+    
+    // --------  MORE METHODS -----------
+    
+    /*
+     * Stop the bicycle
+     * 
+     */
+    public void stop() {
+        this.speed = 0;
+    }
+    
+    // Slow Down
+    
+    public boolean slowDown() {
+        boolean isDone = false;
+            if (this.frontSprocket != 1) {
+            this.rearSprocket = this.nRearSprocket - 1;
+            frontSprocket--;
+            this.speed -= 10;
+            isDone = true;
+        } else {
+            this.rearSprocket = this.nRearSprocket;
+                this.speed -= 10;
+            isDone = true;
+        }
+        return isDone;
+    }
+    
+    // Speed up
+    
+    //public void speedUp
+    
+    /*
+     * 
+     * Textual representation of the object
+     * 
+     */
+    
+    public String toString() {
+        String s = "La bicicleta es " + this.model + " ,tiene " + this.nFrontSprocket + " catalinas ," + this.nRearSprocket + 
+            " piñones y su velocidad máxima es " + this.maxSpeed + ".\n";
+        return s;
+    }
+}
+

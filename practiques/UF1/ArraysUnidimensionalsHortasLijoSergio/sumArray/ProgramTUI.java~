@@ -1,0 +1,43 @@
+/*
+ * Program.java        3/12/21
+ *
+ * Determina e interrumpe una secuencia si hay dos numeros consecutivos iguales
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Scanner;
+
+public class ProgramTUI {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        double suma = 0;
+        System.out.print("\n\n LECTURA Y ESCRITURA DE UN ARRAY \n\n");        
+        // Empezamos con la lista de números
+        System.out.print("Dimension?");
+        int n = s.nextInt();
+        // Create the array, allocate enough memory por n elements
+        double[] a = new double[n];
+        // Read n numbers and store them into the array
+        for (int i = 0; i < n; i++) {
+            System.out.printf("a[%d]=", i);
+            a[i] = s.nextDouble();
+            suma = suma + a[i];
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.printf("a[%d]= %.2f\n", i, a[i]);
+            
+        }
+        System.out.printf("d",suma);
+    }
+}

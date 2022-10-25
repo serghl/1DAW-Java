@@ -1,0 +1,39 @@
+/*
+ * Program.java        7/2/22
+ *
+ * Quita los espacios de un String
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * @param Str an String
+     * 
+     * @return a boolean
+     */
+    
+    public String removeSpaces(String str) {
+        String newStr = "";
+        int longitud = str.length();                
+        System.out.print("\n\n REMOVE SPACES \n\n");                
+        // Con un bucle buscamos los carácteres y sumamos cada ocurrencia encontrada a un contador
+        for (int i = 0; i < longitud; i++ ) {  
+            char character = str.charAt(i);    
+            if (character != ' ') {
+              newStr += character;
+            }             
+        }
+        return newStr;
+    }
+    
+    // Aqui hecho con el metodo de REPLACE
+    public String removeSpaces(String str) {
+        return str.replace(" " , "");
+}

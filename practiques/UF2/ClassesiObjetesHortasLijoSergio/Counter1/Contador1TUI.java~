@@ -1,0 +1,31 @@
+public class Contador1TUI {
+    
+    
+    
+    public static void main(String[] args) {
+        Contador1 t1 = new Contador1(5);
+        Contador1 t2 = new Contador1(0);
+        // Por defecto
+        Contador1 t3 = new Triangle();
+     
+        
+        t1.perimeter();
+        printTriangle(t1);
+        
+       
+        // Aqui es lo mismo que abajo pero simplificado
+        // System.out.println("-- AQUI --");
+        // System.out.println(t2.toString());
+        
+    }
+    
+    public static void printTriangle(Triangle t) {
+        System.out.println("TRIANGULO:             " );
+        System.out.println("Lado 1:             " + t.getSide1());
+        System.out.println("Lado 2:             " + t.getSide2());
+        System.out.println("Lado 3:             " + t.getSide3());
+        System.out.printf("El perimetro es de: %.2f\n", t.perimeter());
+        System.out.printf("El area es de:      %.2f\n", t.area());
+        System.out.println();
+    }
+}

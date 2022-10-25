@@ -1,0 +1,33 @@
+/*
+ * Program.java        28/11/21
+ *
+ * A partir de un número entero positivo, suma sus dígitos
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program { 
+    
+    /** 
+     * @n an int to be add
+     * 
+     */ 
+    public inr sumDigits (int n) {
+        int total;
+        int t = n;
+        int t2 ;
+        while (t > 0) {
+        t2 = t % 10;    
+        total = total + t2;
+        t / 10;                              
+        }
+        return sumDigits;
+    }
+}
+
+
+
+

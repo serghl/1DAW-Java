@@ -1,0 +1,40 @@
+/*
+ * Program.java        19/12/21
+ *
+ *  Une los valores de dos arrays y añadeselos a un tercero
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+
+public class Program {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    public int[] join(int[] a, int[] b) {
+        int i = 0;
+        int contadorSuma = 0;
+        int[] suma;
+        suma = new int[a.length + b.length];   
+        System.out.print("\n\n JOIN \n\n");        
+        // Iniciamos un recorrido del array, buscando pares mayores a 50
+        for (int x : a) {
+            suma[contadorSuma] = a[i]
+            contadorSuma++;
+            i++;
+        }
+        i = 0;
+        for (int x : b) {
+            suma[contadorSuma] = b[i]
+            contadorSuma++;
+            i++;
+        }
+        return suma;
+    }
+}

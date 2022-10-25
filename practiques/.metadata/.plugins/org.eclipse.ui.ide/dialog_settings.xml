@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/furiante/Documents/21_22_1Hiaw/cosas/development/examenes/Examen Colecciones/ExamenExcepcionsColeccions20220530"/>
+			<item value="/home/furiante/Documents/21_22_1Hiaw/cosas/development/examenes/Examen Colecciones/ExamenExcepcionsColeccions20220530/tankFarm"/>
+			<item value="/home/furiante/Documents/21_22_1Hiaw/cosas/development/examenes/Examen Colecciones/ExamenExcepcionsColeccions20220530_HortasLijoSergio"/>
+			<item value="/home/furiante/Documents/WorkSpace/finch-2021/FinchJavaEclipse"/>
+			<item value="/home/furiante/Documents/21_22_1Hiaw/programacion/practiques/UF5/Excepciones"/>
+			<item value="/home/furiante/Documents/21_22_1Hiaw/programacion/practiques/UF6"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+</section>

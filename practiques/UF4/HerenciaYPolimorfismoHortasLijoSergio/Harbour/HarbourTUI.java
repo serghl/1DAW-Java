@@ -1,0 +1,83 @@
+/*
+ * HarbourTUI.java
+ * 
+ *
+ */
+
+
+
+public class HarbourTUI {
+    
+    public static void main(String[] args) {
+        LuxuryYatch yatch1 = new LuxuryYatch("111",14.6,2015,200,4);
+        LuxuryYatch yatch2 = new LuxuryYatch("222",23,2020,400,7);
+        SportBoatsWithMotor sbm1 = new SportBoatsWithMotor("555",7.4,2019,350); 
+        SailBoat sb1 = new SailBoat("333",11,2000,1);
+        SailBoat sb2 = new SailBoat("444",17,2015,2);
+        Rent r1 = new Rent("11222333J","Manolo","15/05/2022","15/05/2023","123",yatch1);
+        Rent r2 = new Rent("11222333K","Sofia","10/03/2021","25/05/2023","124",yatch2);
+        Rent r3 = new Rent("11222333M","Mercedes","01/01/2022","30/06/2023","125",sbm1);
+        Rent r4 = new Rent("11222333N","Paco","10/01/2024","10/01/2025","126",sb1);
+        Rent r5 = new Rent("11222333J","Sergio","16/08/2025","15/09/2025","127",sb2);
+        Harbour h1 = new Harbour("Sanxenxo","España");
+        
+        System.out.println("----------------------------");
+        System.out.println("Añadimos el Yate 1 al puerto");
+        System.out.println(h1.add(r1));
+        System.out.println("----------------------------");
+        System.out.println("Añadimos el Yate 2 al puerto");
+        System.out.println(h1.add(r2));
+        System.out.println("----------------------------");
+        System.out.println("Añadimos el SportBoatMotor 1 al puerto");
+        System.out.println(h1.add(r3));
+        System.out.println("----------------------------");
+        System.out.println("Añadimos el SailBoat 1 al puerto");
+        System.out.println(h1.add(r4));
+        System.out.println("----------------------------");
+        System.out.println("Añadimos el Sailboat 2 al puerto");
+        System.out.println(h1.add(r5));
+        System.out.println("----------------------------");
+        System.out.println("Dias totales del yate 1 en el puerto");
+        System.out.println(r1.days());
+        System.out.println("----------------------------");
+        System.out.println("Dias totales del yate 2 en el puerto");
+        System.out.println(r2.days());
+        System.out.println("----------------------------");
+        System.out.println("Dias totales del sailboat 1 en el puerto");
+        System.out.println(r4.days());
+        System.out.println("----------------------------");
+        System.out.println("Coste total del rent1 (1 año)");
+        System.out.println(r1.amount());
+        System.out.println("----------------------------");
+        System.out.println("Coste diario del rent1");
+        System.out.println(r1.amountPerDay());
+        System.out.println("----------------------------");
+        System.out.println("Coste total del rent2(2 años y pico)");
+        System.out.println(r2.amount());
+        System.out.println("----------------------------");
+        System.out.println("Coste total del rent4(4 años y pico)");
+        System.out.println(r4.amount());
+        System.out.println("----------------------------");
+        System.out.println("Coste diario del rent2");
+        System.out.println(r2.amountPerDay());
+        System.out.println("----------------------------");
+        System.out.println("Coste diario del rent4");
+        System.out.println(r4.amountPerDay());
+        System.out.println("----------------------------");
+        System.out.println("Ingresos mensuales de Diciembre de 2022");
+        System.out.println(h1.calculateAmountMonth(12,2022));
+        System.out.println("----------------------------");
+        System.out.println("Ingresos mensuales de Enero de 2025 (10 dias (primeros de enero) del r4)");
+        System.out.println(h1.calculateAmountMonth(1,2025));
+        System.out.println("----------------------------");
+        System.out.println("Coste diario del rent5");
+        System.out.println(r5.amountPerDay());
+        System.out.println("----------------------------");
+        System.out.println("Ingresos mensuales de Agosto de 2025 (16 dias (ultimos de agosto) del r5)");
+        System.out.println(h1.calculateAmountMonth(8,2025));
+        System.out.println("----------------------------");
+        System.out.println("Report Rents");
+        h1.reportRents("report");
+    }
+}
+

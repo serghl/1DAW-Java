@@ -1,0 +1,34 @@
+/*
+ * Program.java        17/11/21
+ *
+ * Calcula el factorial de un numero entero
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program { 
+    
+    /** 
+     * @n1 an int to be add
+     *  
+     */ 
+    public void factorial(int n) {
+        // Asignamos un valor 1 a la variable de resultado
+        int fact = 1;
+        // Iniciamos el bucle, en este caso definimos que si diferente a 0, --
+        for (int i = n; i != 0 ; i--) {
+        // Aquí multiplicamos por i en cada caso 
+            fact = fact * i;
+        // Lo imprimimos 
+            System.out.print(i +" * "); 
+        }
+        // Añadimos el resultado al final
+        System.out.println(" = " +fact);
+    }
+    
+}
+
+

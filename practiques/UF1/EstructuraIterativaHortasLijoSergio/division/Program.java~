@@ -1,0 +1,32 @@
+/*
+ * Program.java        23/11/21
+ *
+ * A partir de un dividendo y su divisor, calcula el cociente y el residuo
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program { 
+    
+    /** 
+     * @n1 an int to be add
+     *  
+     */ 
+    public String divide(int n1, int n2) {
+        int cociente;
+        int residuo;
+        int temporal = n1;
+        for (i = 0 ; i <= n2; i++) {
+            temporal = temporal - n1;
+    }
+        residuo = n1 - temporal;
+        return "El cociente es "+ cociente +" y el residuo es " + residuo;    
+    }
+}
+
+
+
+

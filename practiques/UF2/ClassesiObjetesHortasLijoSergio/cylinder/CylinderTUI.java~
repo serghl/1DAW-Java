@@ -1,0 +1,16 @@
+public class CylinderTUI {
+    
+    public static void main(String[] args) {
+        
+        Cylinder c1 = new Cylinder(3,5);
+        Cylinder c2 = new Cylinder(5,7);
+        
+        System.out.println("-- CYLINDER --");
+        
+        System.out.println(c1.toString());
+        System.out.println("------------");
+        System.out.println(c2.toString());
+        // Como llamo al metodo desde aqui añadiendo dos argumentos?
+        //System.out.println(c1.c2.compare());
+    }      
+}

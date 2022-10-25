@@ -1,0 +1,42 @@
+PUERTO DE Sanxenxo,España
+*******************************************
+Alquiler Nº0
+DNI :11222333J
+Nombre :Manolo
+Código Amarre :123
+Inicio / Fin :15/05/2022 / 15/05/2023
+Importe Total :255500.0
+Importe Diario :700.0
+-----------------------------------
+Alquiler Nº0
+DNI :11222333K
+Nombre :Sofia
+Código Amarre :124
+Inicio / Fin :10/03/2021 / 25/05/2023
+Importe Total :1026844.0
+Importe Diario :1274.0
+-----------------------------------
+Alquiler Nº0
+DNI :11222333M
+Nombre :Mercedes
+Código Amarre :125
+Inicio / Fin :01/01/2022 / 30/06/2023
+Importe Total :462160.0
+Importe Diario :848.0
+-----------------------------------
+Alquiler Nº0
+DNI :11222333N
+Nombre :Paco
+Código Amarre :126
+Inicio / Fin :10/01/2024 / 10/01/2025
+Importe Total :81252.0
+Importe Diario :222.0
+-----------------------------------
+Alquiler Nº0
+DNI :11222333J
+Nombre :Sergio
+Código Amarre :127
+Inicio / Fin :16/08/2025 / 15/09/2025
+Importe Total :10320.0
+Importe Diario :344.0
+-----------------------------------

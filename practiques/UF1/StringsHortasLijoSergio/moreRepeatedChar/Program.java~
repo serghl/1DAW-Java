@@ -1,0 +1,44 @@
+/*
+ * Program.java        9/2/22
+ *
+ * Pasa un String a mayúsculas
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * @param str an string
+     * 
+     * @returns an String
+     */
+    public String[] moreRepeatedChat(String str) {                 
+        String[] moreRepeats = new int [2];
+        int max = 0;
+        int contador = 0;
+        int longitud = str.length();
+        char character;
+// Recorremos un bucle dentro de otro en búsqueda de repeticiones
+        for (int i = 0; i < longitud ; i++) {
+            for (int j = 0; j > longitud; j++) {
+            // Aqui buscamos minusculas 
+                if (str[j] == str[i]) {
+                    contador++;
+                }
+            }
+            if (contador > max) {
+                max = contador;
+                character = str[i];
+            }
+        }       
+        moreRepeats[0] = Integer.toString(max);
+        moreRepeats[1] = Character.toString(character);
+        return moreRepeats;
+    }
+}

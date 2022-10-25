@@ -1,0 +1,27 @@
+/*
+ * Program.java        28/10/21
+ *
+ * Redondea un número doble, con el número en si y el número de decimales que redondeamos
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    public double round(double n, int d){
+        // Aqui calculamos el número de digitos que redondeamos
+        double x = n * Math.pow(10, d-1);
+        // Convertimos a int para quitar decimales
+        int entero = (int)x;
+        // Ejecutamos la estructura alternativa       
+        if (entero % 10 >= 5) {
+            entero = entero / 10 + 1;
+        } else {
+            entero = entero / 10;
+        }
+        return entero;
+    }
+}

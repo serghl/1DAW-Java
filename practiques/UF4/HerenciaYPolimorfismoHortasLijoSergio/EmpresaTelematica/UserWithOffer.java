@@ -1,0 +1,26 @@
+/*
+ * Program.java        19/4/22
+ *
+ * Crea la clase UserWithOffer
+ * 
+ * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public abstract class UserWithOffer extends User {
+    
+    /** Atributes */
+               
+    // CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     *      
+     */
+    public UserWithOffer (String name, String dni, double priceMinute) {
+       super(name, dni, priceMinute);
+    }
+    
+}

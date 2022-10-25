@@ -1,0 +1,29 @@
+/*
+ * Program.java        8/10/12
+ *
+ * Calculate the average pf 3 real numbers
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    /**
+     * 
+     * @param a an int
+     * @param b an int
+     * @param c an int
+     * @return the average of a, b and c
+     */
+    public int average (int a, int b, int c) {
+        int total;
+    // Asignamos la suma de a, b y c a una nueva variable llamada total
+        total = a + b + c;
+    // Dividimos el total entre 3
+        total / 3;
+        return total;
+    }
+}

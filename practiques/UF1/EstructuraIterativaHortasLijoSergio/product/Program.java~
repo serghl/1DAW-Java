@@ -1,0 +1,30 @@
+/*
+ * Program.java        16/11/21
+ *
+ * Interpreta una multiplicacion como una suma
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program { 
+    
+    /** 
+     * @n1 an int to be add
+     * @n2 an int to be add
+     *  
+     */ 
+    public void multiply(int n1, int n2) {
+        // Variable de resultado
+        int resultado = 0;
+        for (int i = 0; i <= n2 ; i++) {
+          resultado = resultado + n1;
+          System.out.println(n1" + \n");  
+            }
+        }
+        System.out.println(resultado);
+    }
+}
+

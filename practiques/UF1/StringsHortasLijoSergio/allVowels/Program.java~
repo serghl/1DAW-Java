@@ -1,0 +1,39 @@
+/*
+ * Program.java        1/2/22
+ *
+ * Busca si una cadena contiene las 5 vocales
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    /**
+     * 
+     * @param str an String
+     * 
+     * @return a boolean
+     */
+    
+    public boolean allVowels(String str) {
+        String stringLower = str.toLowerCase();
+        String vowelsString = "aeiou";
+        int longitud = str.length(); 
+        int i = 0;
+        System.out.print("\n\n ALL VOWELS \n\n");                
+        // Con un bucle buscamos la vocal y la asignamos, parando el bucle al encontrar la primera
+       char vowel = stringLower.charAt(i);
+        while ( i < longitud ) {  
+            if (vowel == 'a' || vowel == 'e' || vowel == 'i' ||
+                vowel == 'o' || vowel == 'u') {
+                vowelsString -= stringLower.charAt(i);
+                System.out.print(vowels);                          
+            }
+        }        
+    }
+}
+
+

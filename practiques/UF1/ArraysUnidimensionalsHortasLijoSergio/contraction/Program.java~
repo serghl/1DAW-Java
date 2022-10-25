@@ -1,0 +1,41 @@
+/*
+ * Program.java        19/12/21
+ *
+ * Realiza la contraccion de dos arrays
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * 
+     * @param int[]a an array of int
+     * @param int[]b an array of int
+     * 
+     * @return the join of both arrays
+     */
+    public int[] contraction(int[] a, int[] b) {
+        System.out.print("\n\n CONTRACTION \n\n");        
+        int[] contraction;
+        contraction = new int[a.length];
+        int i = 0;
+        // Primero comparamos que los dos arrays sean iguales
+        if (a.length == b.length) {
+            // Luego sumamos los elementos del mismo index y los añadimos al nuevo
+            for (int x : a) {
+                contraction[i] = a[i] + b[i];
+                i++;
+            } 
+        } else {
+                System.out.println("ERROR : Los arrays no tienen la misma longitud \n");
+        }
+        return contraction;
+    }
+}
+
+

@@ -1,0 +1,65 @@
+
+import java.util.*;
+
+
+
+public class ListFeaturesPerson {
+
+ public static void main(String[] args) {
+  List<Person>persons = new ArrayList<Person>();
+  Collections.addAll(persons, new Teacher("pepa"), new Student("pau"), 
+  new InternationalStudent("paul"),new Student("mariona"));
+     Random rand = new Random(47);
+     System.out.println("1: " + persons);
+     Student h = new Student("berta");
+     persons.add(h); 
+     System.out.println("2: " + persons);
+     System.out.println("3: " + persons.contains(h)); // Comprova que un objecte es troba al ArrayList
+     persons.remove(h); // Esborra un element del ArrayList
+     Person p = persons.get(2);
+     System.out.println("4: " +  p + " " + persons.indexOf(p)); // Mostra la posició d'un element dins del ArrayList
+     Person c = new Student("josep");
+     System.out.println("5: " + persons.indexOf(c)); // No troba l'objecte per què el seu id de la classe Individuals son diferents
+     System.out.println("6: " + persons.remove(c)); // no el pot esborrar perquè no es troba dins la llista
+     // Must be the exact object:
+     c = persons.get(0);
+     System.out.println("7: " + persons.remove(c)); 
+     System.out.println("8: " + persons);
+     persons.add(0, new Teacher("julia"));
+     persons.add(h); 
+     System.out.println("9: " + persons);
+     List<Person> sub = persons.subList(1, 4);  // Crea una subllista de 3 elements començant per la posició 1 fins 4 - 1
+     System.out.println("subList: " + sub);
+     System.out.println("10: " + persons.containsAll(sub));
+     Collections.sort(sub); // Ordenem la subllista
+     System.out.println("sorted subList: " + sub);
+     System.out.println("11: " + persons.containsAll(sub)); // comprovem que retorna true encara que estiguin ordenats
+     Collections.shuffle(sub, rand); 
+     System.out.println("shuffled subList: " + sub); // comprovem que retorna true encara que estiguin desordenats
+     System.out.println("12: " + persons.containsAll(sub));
+     List<Person> copy = new ArrayList<Person>(persons);
+     sub = Arrays.asList(persons.get(1), persons.get(4)); // Retorna una llista a partir d'un vector
+     System.out.println("persons: " + persons);
+     System.out.println("sub: " + sub);
+     copy.retainAll(sub);  // conserva tots els elements de copy que també es troben a sub . Intersecció de conjunts
+     System.out.println("13: " + copy);
+     copy = new ArrayList<Person>(persons); 
+     System.out.println("14: " + persons);
+     copy.remove(2); // Esborra l'element de la posició 2 : Manx
+     System.out.println("14bis: " + copy);
+     System.out.println("sub: " + sub);
+     copy.removeAll(sub); // Esborra els elements que també es troben a sub.
+     System.out.println("15: " + copy);
+     copy.set(1, new Teacher("Anna")); // Inserta un nou element en una posició
+     System.out.println("16: " + copy);
+     copy.addAll(2, sub); // Inserta la subllista sub a partir de la posició 2
+     System.out.println("17: " + copy);
+     System.out.println("18: " + persons.isEmpty());
+     persons.clear(); //Esborra tots els elements
+     System.out.println("19: " + persons);
+     System.out.println("20: " + persons.isEmpty());
+   
+
+ }
+
+}

@@ -1,0 +1,41 @@
+/*
+ * Program.java        16/11/21
+ *
+ * Escribe el producto de dos valores introducidos
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Scanner;
+
+public class ProgramTUI {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num;
+        int num2;
+        int i = 2;
+        // Ahora empezamos con la lista de números
+        System.out.print("Cual es el primer número?");
+        num = s.nextInt();
+        System.out.print("Cual es el primer número?");
+        num2 = s.nextInt();
+        // Asignamos tanto el mínimo como el máximo a la primera entrada
+        min = num;
+        max = num;
+        // Hacemos la iteración entre la cantidad de números que hayamos elegido
+        for (int i = 0; i > num2; i++){
+        num = num + num;
+        System.out.printf("%d +", num);
+    }
+        System.out.printf(num);
+}

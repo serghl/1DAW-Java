@@ -1,0 +1,35 @@
+/*
+ * Program.java        15/11/21
+ *
+ *  Escribe una secuencia de múltiplos de un entero, hasta un límite
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program { 
+    
+    /** 
+     * @n1 an int to be add
+     * @n2 an int to be add
+     *  
+     */ 
+    public void writeMultiples(int n1, int n2) {
+        int resultado = n1;
+        for (int i = 1; (resultado + n1) <= n2; i++) {
+            resultado = n1 * i;
+            System.out.println(resultado);
+        }
+    }
+    public void writeMultiples2(int n1, int n2) {
+        int resultado = n1;
+        int i = 1;
+        while (resultado + n1 <= n2) {
+            resultado = n1 * i;
+            i++;
+            System.out.println(resultado);
+        }
+    } 
+}

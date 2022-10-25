@@ -1,0 +1,59 @@
+/*
+ * Program.java        19/1/22
+ *
+ * Multiplica dos arrays bidimensionales
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    public void multiplyMatrices (int[][]a, int[][]b) {
+        // Definimos con variables las filas y columnas
+        int aFilas = a.length;
+        int aColumnas = a[0].length;
+        int bFilas = b.length;
+        int bColumnas = b[0].length;
+        int[][]c = new int[aFilas][bColumnas];
+        System.out.print("\n\n --- MULTIPLY MATRICES --- \n\n");
+        System.out.print("\n FACTORES : \n");
+        // Con un forEach
+        System.out.print("\n MULTIPLICANDO \n\n");
+        for (int[]fila : a) {
+            System.out.println(Arrays.toString(fila));
+        }
+        System.out.print("\n MULTIPLICADOR \n\n");
+        for (int[]fila : b) {
+            System.out.println(Arrays.toString(fila));
+        }
+        // Ahora ejecutamos el proceso
+        for (int i = 0; i < aFilas; i++) { 
+            for (int j = 0; j < bColumnas; j++) { 
+                for (int k = 0; j < aColumnas; j++) {
+                    c[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+        System.out.print("\n -- PRODUCTO -- \n\n");
+        // Imprimimos el array c
+        for (int[]fila : c) {
+            System.out.println(Arrays.toString(fila));
+        }
+    }
+}
+
+
+
+
+
+
+

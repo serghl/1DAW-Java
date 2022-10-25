@@ -1,0 +1,27 @@
+public class BicycleTUI {
+    
+    public static void main(String[] args) {
+        
+        // Argumentos para la bici -> model,Nrear,Nfront,rear,front,maxSpeed,speed
+        
+        Bicycle b1 = new Bicycle("Mountain Bike",5,3,3,1,120,50);
+        
+        
+        System.out.println("-- BICYCLE --");
+        
+        System.out.println(b1);
+        // Velocidad Inicial       
+        System.out.println(b1.getSpeed());
+        System.out.println("Plato antes --> " + b1.getFrontSprocket());
+        System.out.println("Piñon antes --> " + b1.getRearSprocket());
+        // Metodo de stop
+        b1.slowDown();
+        b1.slowDown();
+        b1.slowDown();
+        b1.slowDown();
+        System.out.println("Plato después --> " + b1.getFrontSprocket());
+        System.out.println("Piñon despues --> "+ b1.getRearSprocket());
+        // Velocidad Actual        
+        System.out.println(b1.getSpeed());
+     }
+}

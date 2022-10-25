@@ -1,0 +1,13 @@
+public class RingTUI {
+    
+    
+    
+    public static void main(String[] args) {
+        Ring r1 = new Ring("Alianza",24,30);
+        Ring r2 = new Ring("Anillo de Sauron",28,35);
+        
+       r2.cost(r2);
+        
+        
+    }
+}

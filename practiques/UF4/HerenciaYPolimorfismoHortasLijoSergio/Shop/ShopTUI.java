@@ -1,0 +1,29 @@
+/*
+ * ShopTUI.java
+ * 
+ *
+ */
+
+
+
+public class ShopTUI {
+    
+    public static void main(String[] args) {
+       Cpu c1 = new Cpu("111","Intel 5",8,140,600);
+       Cpu c2 = new Cpu("222","Intel 7",1,200,800);
+       HardDisk h1 = new HardDisk("333","SSD",3,100,500);
+       HardDisk h2 = new HardDisk("444","SSD",3,200,1000);
+       Shop s1 = new Shop();
+       
+       s1.add(c1);
+       s1.add(c2);
+       s1.add(h1);
+       s1.add(h2);
+       
+       System.out.println(s1.stockValue());
+       s1.printStock();
+    }
+}
+
+
+    

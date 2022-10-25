@@ -1,0 +1,30 @@
+/*
+ * Program.java        28/10/21
+ *
+ * Retorna la medida textual de un tornillo.
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    public String screwSize(double s){
+        String size;
+        // Ejecutamos el ciclo        
+        if (s >= 1 && s < 3) {
+            size = "Petit";
+        } else if (s >= 3 && s < 5){
+            size = "Mitjá";
+        } else if (s >= 5 && s < 6.5){
+            size = "Gran";
+        } else if (s >= 6.5 && s < 8.5){
+            size = "Molt gran";
+        } else {
+            size = "Ese tamaño no existe"
+        }
+        return size;
+    }
+}

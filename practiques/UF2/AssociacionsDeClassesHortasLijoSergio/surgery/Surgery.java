@@ -1,0 +1,163 @@
+/* 
+ * Program.java        15/3/22 
+ * 
+ * Surgery
+ * 
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com> 
+ * 
+ * This is free software, licensed under the GNU General Public License v3. 
+ * See http://www.gnu.org/licenses/gpl.html for more information. 
+ */
+import java.time.LocalDateTime;
+
+import java.util.HashSet;
+
+/**
+ * Modelizes a surgery.
+ */
+public class Surgery {
+    
+    
+    /** Atributos */
+    private String doctorName;
+    private String speciality;
+    private HashSet<Visit> visits;
+    
+    
+    /**
+     * Constructor.
+     */
+    public Surgery(String doctorName, String speciality) {
+        
+        this.doctorName = doctorName;
+        this.speciality = speciality;
+        this.visits = new HashSet<Visit>();
+    }
+    
+    /**
+     *
+     * Check if a visit is programable
+     * 
+     */
+    public boolean isProgramable(Visit visit) {
+        boolean isProg = true;
+        // Definimos como LocalDateTime la hora de la visita y reservamos los siguientes 15 minutos
+        LocalDateTime visitTime = JodaDT.parseDDMMYYYYhhmm(visit.getVisitDateTime());
+        LocalDateTime visitPlus15 = visitTime.plusMinutes(15);
+        // Buscamos en el hashSet, con un forEach
+        for (Visit v : this.visits) {
+            // Casteamos cada visita del HashSet a localDateTime también, con sus 15 minutos de margen
+            LocalDateTime hashVisitTime = JodaDT.parseDDMMYYYYhhmm(v.getVisitDateTime());
+            LocalDateTime hashVisitPlus15 = hashVisitTime.plusMinutes(15);    
+            // Con booleanos chequeamos que no se cumpla algun motivo que anule la visita
+            // 1 -Que sea a la misma hora
+            boolean sameTime = hashVisitTime.equals(visitTime);
+            // 2 - Reservamos los 15 minutos posteriores
+            boolean visitInInterval = JodaDT.isInInterval(visitTime,hashVisitTime, hashVisitPlus15);
+            // 3 - Chequeamos que tenga libres los posteriores 15 minutos
+            boolean visitInIntervalPlus15 = JodaDT.isInInterval(visitPlus15,hashVisitTime, hashVisitPlus15);
+            // Un ultimo booleano valida las dos
+            boolean noPosible = sameTime || visitInInterval || visitInIntervalPlus15;
+            // Si es positivo, anula
+            if (noPosible) {
+                isProg = false;
+            }
+        }
+        return isProg;
+    }
+    
+    /**
+     * 
+     * Program a visit
+     * 
+     */
+    
+    public boolean program (Visit visit) {
+        if (isProgramable(visit)) {
+            return this.visits.add(visit);
+        } else {
+            return false;
+        }    
+    }
+    
+    /**
+     * Count the visits
+     * 
+     */
+    
+    public int countVisits() {
+        return this.visits.size();
+    }
+    
+    /**
+     * 
+     * Count the visits on an interval
+     * 
+     */
+    
+    public int countVisits(String date1 , String date2) {     
+        int numberOfVisits = 0;
+        LocalDateTime interval1 = JodaDT.parseDDMMYYYYhhmm(date1);
+        LocalDateTime interval2 = JodaDT.parseDDMMYYYYhhmm(date2);
+        // En un for each buscamos y sumamos al contador        
+        for (Visit v : this.visits) {
+            LocalDateTime actualVisit = JodaDT.parseDDMMYYYYhhmm(v.getVisitDateTime());
+            if (actualVisit.isAfter(interval1) && actualVisit.isBefore(interval2)) {
+                numberOfVisits++;
+            }
+        }
+        return numberOfVisits;
+    }
+    
+    /**
+     * 
+     * Remove a visit
+     * 
+     */
+    
+    public boolean removeVisit(Visit visit) {
+        return this.visits.remove(visit);
+    }
+    
+    /**
+     * 
+     * Remove all the visits 
+     * 
+     */
+    
+    public void removeAll() {
+        this.visits.clear();
+    }
+    
+    // Equals & hashCode
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((doctorName == null) ? 0 : doctorName.hashCode());
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Surgery other = (Surgery) obj;
+        if (doctorName == null) {
+            if (other.doctorName != null)
+                return false;
+        } else if (!doctorName.equals(other.doctorName))
+            return false;
+        return true;
+    }
+    
+    @Override
+    public String toString() {
+        return "doctorName : " + this.doctorName + " Speciality : " + this.speciality ;
+    }
+}

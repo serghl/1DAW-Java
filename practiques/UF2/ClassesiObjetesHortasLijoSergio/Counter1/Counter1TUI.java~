@@ -1,0 +1,23 @@
+public class Counter1TUI {
+    
+    
+    
+    public static void main(String[] args) {
+        Counter1 c1 = new Counter1(5);
+        Counter1 c2 = new Counter1(0);
+        // Por defecto
+        
+        
+        
+        raise(c2);
+        reset(c1);
+        
+        
+        // Aqui es lo mismo que abajo pero simplificado
+        // System.out.println("-- AQUI --");
+        System.out.println(c2.toString());
+        System.out.println(c1.toString());
+        
+        
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Excepciones&apos; to &apos;UF5&apos;" description="Rename resource &apos;Excepciones&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Excepciones" name="UF5" stamp="1653210949746" updateReferences="true"/>
+</session>

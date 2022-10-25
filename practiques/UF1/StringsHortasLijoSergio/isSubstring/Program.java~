@@ -1,0 +1,47 @@
+/*
+ * Program.java        8/2/22
+ *
+ * Determina si una cadena es subcadena de otra
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Arrays;
+
+public class Program {
+    
+    /**
+     *
+     * @param Str an String
+     * 
+     * @return a reversedString
+     */
+    
+    public void isSubstring(String str, String sub) {
+        String reversedString = "";     
+        int longitud = str.length();
+        char character;
+        char characterSub;
+        // Con un bucle buscamos los carácteres y los sumamos al string final
+        for ( int i = 0 ; i < longitud ; i++ ) {  
+            character = str.charAt(i);    
+            characterSub = sub.charAt(i);    
+        }
+    
+    }
+    /**
+     * Esto con el indexOf
+     * 
+     * @param Str an String
+     * @param sub an String
+     * @return a boolean
+     */
+    public void isSubString2(String str, String sub) {        
+        int posicion = str.indexOf(sub);
+        System.out.printf("El substring - %s - se encuentra en el String - %s - en la posicion %d ",sub,str,posicion);
+        
+    }   
+}

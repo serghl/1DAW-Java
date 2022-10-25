@@ -1,0 +1,102 @@
+/*
+ * Program.java        7/4/22
+ *
+ * Crea la clase Student
+ *
+ * Copyright Sergio Hortas Lijó 2022 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Student extends Person {
+    
+    /** Atributes */
+    private String cycle;
+    private int course;
+    
+    // CONSTRUCTORS
+    
+    /*
+     * Constructor by default.
+     *      
+     */
+    public Student() {
+        super();        
+    }
+    
+    /*
+     * Constructor 
+     */
+    
+    public Student (String name, String address, String cycle, int course) {
+        super(name, address);
+        this.cycle = cycle;
+        this.course = course;
+    }
+        
+    /**
+     * Getters y setters
+     */
+    
+    /**
+     * Gets the cycle
+     *      
+     */
+    
+    public String getCycle() {
+        return this.cycle;
+    }
+    
+    public void setCycle(String cycle) {
+        this.cycle = cycle;
+    }
+    
+    /**
+     * Gets the course
+     * 
+     */
+    
+    public int getCourse() {
+        return course;
+    }
+    
+    public void setCourse(int course) {        
+        this.course = course;
+    }              
+    
+    // Equals & hashCode
+    /* 
+     
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Person other = (Person) obj;
+        if (name == null) {
+            if (other.name!= null)
+                return false;
+        } else if (name != other.name)
+            return false;
+        return true;
+    }
+    */
+    @Override
+    public String toString() {
+        return super.toString() + "\ncycle : "
+            + this.cycle + "\ncourse : " + this.course;
+    }
+}
+

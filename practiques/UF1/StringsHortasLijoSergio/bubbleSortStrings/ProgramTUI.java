@@ -1,0 +1,44 @@
+/*
+ * Program.java        21/12/21
+ *
+ * Ordena un array con el método burbuja
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+
+import java.util.Arrays;
+
+public class ProgramTUI {
+    
+    /**
+     * 
+     * @param int[]a an array of int
+     * 
+     * @return a boolean
+     */
+    public String[] stringBubbleSort(String a) {
+        String aux;
+        int i, j;
+        String [] words = a.split("\\s+");
+       
+        System.out.print("\n BUBBLE STRING SORT \n\n");                
+        // Traverse the array from the beggining to the end
+        for (i = 0; i < words.length; i++) {
+            // Traverse the array element from the last but one element until 
+            for (j = 0; j < words.length - i - 1; j++) {               
+                // Put small elements to the left of the table
+                if (words[j].compareTo(words[j + 1]) > 0) {
+                    aux = words[j];
+                    words[j] = words[j+1] ;
+                    words[j + 1] = aux;
+                }
+            }                    
+        }
+        return words;
+    }
+}
+

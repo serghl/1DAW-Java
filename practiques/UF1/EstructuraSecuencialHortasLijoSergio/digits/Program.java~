@@ -1,0 +1,29 @@
+/*
+ * Program.java        11/10/21
+ *
+ * Calcular una position en una secuencia de enteros
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    /**
+     * 
+     * @param n an int
+     * @param p an int
+     * @return the number of the positon
+     */
+    public int digitPosition (int n, int p) {
+     // Declaramos la variable a retornar
+        int pos;
+     // Primero calculamos el último numero
+        int last = n % 10;
+     // Lo calculamos
+        
+        return pos;
+    }
+}

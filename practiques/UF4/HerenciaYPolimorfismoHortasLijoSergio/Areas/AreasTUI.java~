@@ -1,0 +1,27 @@
+/*
+ * SchoolTUI.java
+ * 
+ *
+ */
+
+
+
+public class AreasTUI {
+    
+    public static void main(String[] args) {
+        Office o1 = new Office("123", 25, true, 12, 5, true);
+        Classroom cr1 = new Classroom("222", 30, true, 15, 25, true, 25, true);
+        Laboratory l1 = new Laboratory("333", 20, false, 25, 20, true, 3, true, 10);
+        
+        
+        System.out.println("Office 1");
+        System.out.println(o1.toString());
+        System.out.println("-----------------------");
+        System.out.println("Classroom 1");
+        System.out.println(cr1.toString());
+        System.out.println("-----------------------");
+        System.out.println("Laboratory 1");
+        System.out.println(l1.toString());
+    }
+}
+

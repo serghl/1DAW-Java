@@ -1,0 +1,27 @@
+/*
+ * Program.java        19/10/21
+ *
+ * Calcula si una fecha es real
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+public class Program {
+    
+    /**
+     * @params day an int
+     * @params month an int
+     * @params year an int
+     * @return if is valid
+     * 
+     */
+    public boolean isDate (int day, int month, int year) {
+        boolean dayValid = day >= 1 && day <= 31 && (month == 1 || month == 3 || month == 5 || month == 7
+         || month == 8 || month == 10 || month == 12) || day >= 1 && day <= 30 && (month == 4 || month == 6
+           || month == 9 || month == 11);
+        
+    }
+}

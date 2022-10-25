@@ -1,0 +1,66 @@
+/*
+ * Program.java        29/11/21
+ *
+ * Clasifica notas de unos alumnos en diferentes grados
+ *
+ * Copyright Sergio Hortas Lijó 2021 <1hiaw.hortaslijosergio@gmail.com>
+ *
+ * This is free software, licensed under the GNU General Public License v3.
+ * See http://www.gnu.org/licenses/gpl.html for more information.
+ */
+
+import java.util.Scanner;
+
+public class ProgramTUI {
+    
+    /**
+     * 
+     * @param args not used
+     * 
+     */
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int nota;
+        int : md, i, s, b, n, ex;
+        System.out.printf("\n\nGRADES\n\n");        
+        // Hacemos la iteración entre la cantidad de números que hayamos elegido
+        while (num != -1){
+            // Solicitamos la nota y la asignamos a la lista correspondiente   
+            System.out.print("Cual es la nota Obtenida?");
+            nota = s.nextInt();
+            if (nota >= 0 && nota < 3) {
+                md++;
+                System.out.print("Cual es la nota Obtenida?");
+                nota = s.nextInt();
+            } else if (nota >= 3 && nota < 5) {
+                i++;
+                System.out.print("Cual es la nota Obtenida?");
+                nota = s.nextInt();
+            } else if (nota >= 5 && nota < 6) {
+                s++;
+                System.out.print("Cual es la nota Obtenida?");
+                nota = s.nextInt();
+            } else if (nota >= 6 && nota < 7) {
+                b++;
+                System.out.print("Cual es la nota Obtenida?");
+                nota = s.nextInt();
+            } else if (nota >= 7 && nota < 9) {
+                n++;
+                System.out.print("Cual es la nota Obtenida?");
+                nota = s.nextInt();
+            } else if (nota >= 9 && nota <= 10) {
+                ex++;
+                System.out.print("Cual es la nota Obtenida?");
+                nota = s.nextInt();
+            }
+        }
+                System.out.prinln("RESUMEN DE NOTAS OBTENIDAS:");
+                System.out.printf("Calificaciones MD --> %d:",md);
+                System.out.printf("Calificaciones I --> %d:",i);
+                System.out.printf("Calificaciones S --> %d:",s);
+                System.out.printf("Calificaciones B --> %d:",b);
+                System.out.printf("Calificaciones N --> %d:",n);
+                System.out.printf("Calificaciones EX --> %d:",ex);
+            }
+        }
